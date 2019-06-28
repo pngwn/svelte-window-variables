@@ -1,6 +1,6 @@
 # svelte-window-variables
 
-> This preprocessor should only be used as a last resort of if you have lost all sense of reason.
+> This preprocessor should only be used as a last resort or if you have lost all sense of reason.
 
 `svelte-window-variables` will attach all component methods to the `window` object (when it exists) to give easy access to private component methods. Do no use this unless you have exhausted all other possibilities but if you have to...
 
