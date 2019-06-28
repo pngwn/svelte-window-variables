@@ -31,7 +31,9 @@ if (window) {
     const __window_test__myname = {
       someFunc, someOtherFunc, f, f4, f2, f3
     };
-    window.__test__ = {};
+    if (!window.__test__) {
+      window.__test__ = {};
+    }
     window.__test__.myname = __window_test__myname;
   }
   onDestroy(() => {
@@ -70,7 +72,9 @@ import { onDestroy } from 'svelte';
     const __window_test__myname = {
       someFunc, someOtherFunc, f, f4, f2, f3
     };
-    window.__test__ = {};
+    if (!window.__test__) {
+      window.__test__ = {};
+    }
     window.__test__.myname = __window_test__myname;
   }
   onDestroy(() => {
@@ -111,7 +115,9 @@ import { onDestroy } from 'svelte';
     const __window_test__myname = {
       someFunc, someOtherFunc, f, f4, f2, f3
     };
-    window.__test__ = {};
+    if (!window.__test__) {
+      window.__test__ = {};
+    }
     window.__test__.myname = __window_test__myname;
   }
   onDestroy(() => {
@@ -184,7 +190,9 @@ import { onDestroy } from 'svelte';
     const __window_test__scoobydoo = {
       someFunc, someOtherFunc, f, f4, f2, f3
     };
-    window.__test__ = {};
+    if (!window.__test__) {
+      window.__test__ = {};
+    }
     window.__test__.scoobydoo = __window_test__scoobydoo;
   }
   onDestroy(() => {
@@ -228,7 +236,9 @@ import { onDestroy } from 'svelte';
     const __window_test__myname = {
       someFunc, someOtherFunc, f, f4, f2, f3
     };
-    window.__test__ = {};
+    if (!window.__test__) {
+      window.__test__ = {};
+    }
     window.__test__.myname = __window_test__myname;
   }
   onDestroy(() => {

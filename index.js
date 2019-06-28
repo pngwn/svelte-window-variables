@@ -27,6 +27,7 @@ export function attachToWindow(shouldItRun, attributeName = 'test') {
           ({ type, declarations }) =>
             type === 'FunctionDeclaration' ||
             (type === 'VariableDeclaration' &&
+              declarations[0].init &&
               (declarations[0].init.type === 'FunctionExpression' ||
                 declarations[0].init.type === 'ArrowFunctionExpression'))
         )
@@ -43,7 +44,9 @@ export function attachToWindow(shouldItRun, attributeName = 'test') {
     const __window_test__${testName} = {
       ${identifiers.join(', ')}
     };
-    window.__test__ = {};
+    if (!window.__test__) {
+      window.__test__ = {};
+    }
     window.__test__.${testName} = __window_test__${testName};
   }
   onDestroy(() => {

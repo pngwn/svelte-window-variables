@@ -2,11 +2,13 @@
   "version": 3,
   "file": "bundle.css",
   "sources": [
-    "../test/src/App.svelte"
+    "../test/src/App.svelte",
+    "../test/src/Two.svelte"
   ],
   "sourcesContent": [
-    "<script boom=\"myspecialname\">\n  import { createEventDispatcher } from 'svelte';\n  export let name;\n\n  function someFunction() {\n    console.log('boom');\n  }\n\n  const dispatch = createEventDispatcher();\nif (window) {\n    const __window_test__myspecialname = {\n      someFunction\n    };\n    window.__test__ = {};\n    window.__test__.myspecialname = __window_test__myspecialname;\n  }\n  import { onDestroy } from 'svelte';\n\n  onDestroy(() => {\n    delete window.__test__.myspecialname;\n  });</script>\n\n<style>\n  h1 {\n    color: purple;\n  }\n</style>\n\n<h1>Hello {name}!</h1>\n<button on:click={() => dispatch('event')}>Click me</button>\n"
+    "<script boom=\"myspecialname\">\n  import Two from './Two.svelte';\n  import { createEventDispatcher } from 'svelte';\n  export let name;\n\n  $: console.log(name);\n  $: {\n    if (true) {\n      console.log(condition);\n    }\n  }\n\n  let condition;\n\n  function someFunction() {\n    console.log('boom');\n  }\n\n  const dispatch = createEventDispatcher();\nimport { onDestroy } from 'svelte';\n  if (window) {\n    const __window_test__myspecialname = {\n      someFunction\n    };\n    if (!window.__test__) {\n      window.__test__ = {};\n    }\n    window.__test__.myspecialname = __window_test__myspecialname;\n  }\n  onDestroy(() => {\n    delete window.__test__.myspecialname;\n  });</script>\n\n<style>\n  h1 {\n    color: purple;\n  }\n</style>\n\n<h1>Hello {name}!</h1>\n<button on:click={() => (condition = !condition)}>Click me</button>\n{#if condition}\n  <Two name=\"bill\" />\n{/if}\n",
+    "<script boom=\"nametwo\">\n  import { createEventDispatcher } from 'svelte';\n  export let name;\n\n  function someFunction() {\n    console.log('boom');\n  }\n\n  const dispatch = createEventDispatcher();\nimport { onDestroy } from 'svelte';\n  if (window) {\n    const __window_test__nametwo = {\n      someFunction\n    };\n    if (!window.__test__) {\n      window.__test__ = {};\n    }\n    window.__test__.nametwo = __window_test__nametwo;\n  }\n  onDestroy(() => {\n    delete window.__test__.nametwo;\n  });</script>\n\n<style>\n  h1 {\n    color: purple;\n  }\n</style>\n\n<h1>Hello {name}!</h1>\n<button on:click={() => dispatch('event')}>Click me</button>\n"
   ],
   "names": [],
-  "mappings": "AAuBE,EAAE,eAAC,CAAC,AACF,KAAK,CAAE,MAAM,AACf,CAAC"
+  "mappings": "AAkCE,EAAE,eAAC,CAAC,AACF,KAAK,CAAE,MAAM,AACf,CAAC;ACZD,EAAE,eAAC,CAAC,AACF,KAAK,CAAE,MAAM,AACf,CAAC"
 }
