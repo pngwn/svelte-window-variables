@@ -2,7 +2,7 @@
 
 > This preprocessor should only be used as a last resort or if you have lost all sense of reason.
 
-`svelte-window-variables` will attach all component methods to the `window` object (when it exists) to give easy access to private component methods. Do no use this unless you have exhausted all other possibilities but if you have to...
+`svelte-window-variables` will attach all component methods to the `window` object (when it exists) to give easy access to private component methods. Do not use this unless you have exhausted all other possibilities, but if you have to...
 
 ## Install it
 
@@ -20,7 +20,7 @@ import { attachToWindow } from 'svelte-window-test';
 const test = process.env.AM_I_THE_TEST_ENV;
 
 export default {
-  input: __dirname + '/src/main.js',
+  input: 'src/main.js',
   output: {
     ...outputOptions,
   },
@@ -50,7 +50,7 @@ Only top level functions will be available, nested functions will not be attache
 
 ## `attachToWindow(shouldItRun, attributeName)`
 
-`attachToWindow` only take two parameters:
+`attachToWindow` only takes two parameters:
 
-- `shouldItRun` - boolean - should the preprocessor be enabled? Tell it. This is required.
-- `attributeName` - string - if you want a custom attribute name because of some conflict, you can pass it here. Defaul: `'test'`.
+- `shouldItRun` - `boolean` - should the preprocessor be enabled? Tell it. This is required.
+- `attributeName` - `string` - if you want a custom attribute name because of some conflict, you can pass it here. Defaul: `'test'`.
