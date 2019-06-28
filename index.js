@@ -8,7 +8,7 @@ export function attachToWindow(shouldItRun, attributeName = 'test') {
       const testName = attributes[attributeName];
       const ast = parseScript(content, { module: true });
 
-      // Check for svelte `onMount` imports (I don't care about locally renamed imports)
+      // Check for svelte `onDestroy` imports (I don't care about locally renamed imports)
 
       const onDestroy = ast.body.find(
         ({ type, source, specifiers }) =>
